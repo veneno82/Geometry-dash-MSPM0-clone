@@ -10,6 +10,16 @@ A feature-rich, rhythm-based platformer built for the **Texas Instruments MSPM0G
 
 This project is a high-performance clone of the popular game *Geometry Dash*. It features smooth 30 FPS gameplay, parallax backgrounds, high-quality audio playback from an SD card, and multiple game modes (Cube & Ship).
 
+### 🏆 Achievements & Showcase
+
+- **1st Place Finish:** This project won 1st place at the ECE319K Final Project competition across all 319K sections in Spring 2026
+
+**Watch the Full Showcase + a top 100 geometry dash player beat my hardest level:** [YouTube Link](https://www.youtube.com/watch?v=lGc8fcmo3Zs)
+
+| Superfinals Presentation | Gameplay Showcase |
+| :---: | :---: |
+| ![Superfinals Win](55240298703_ed22175d89_o.jpg) | ![Gameplay Showcase 1](55240157116_c718bddbe4_o.jpg) |
+
 ### Key Features
 - **Smooth Gameplay:** 30Hz fixed-update game loop with optimized AABB collision detection.
 - **Dual Game Modes:**
@@ -64,8 +74,8 @@ Audio is handled via two channels:
 - **Background Music (BGM):** 11kHz 12-bit raw audio streamed from the SD card using the FatFs file system.
 - **Sound Effects (SFX):** Short waveforms stored in Flash for low-latency playback (Jump, Death, Menu Beeps).
 
-### 4. Level Generation
-Levels are not hard-coded. Instead, they are generated using a custom **Python script (`gen_levels.py`)**. The script uses BPM data and mathematical formulas to place obstacles precisely at the correct timestamps, which are then compiled into the `BeatLevels.h` header file.
+### 4. Level Design
+Levels are **hand-crafted** to ensure perfect rhythm and timing. The level data is stored in `BeatLevels.h` using a custom event system that maps game ticks to obstacle spawns. This allows for precise sync between the obstacles and the 11kHz background music.
 
 ## 🎮 Controls
 
@@ -82,12 +92,11 @@ Levels are not hard-coded. Instead, they are generated using a custom **Python s
 ├── DAC.c/h           # 12-bit DAC driver
 ├── images/           # Sprite and UI graphics
 ├── sounds/           # RAW audio files for SD card
-├── gen_levels.py     # Python level generation tool
-└── BeatLevels.h      # Generated beat-synced level data
+├── BeatLevels.h      # Hand-crafted beat-synced level data
 ```
 
 ## 📜 License
 This project is licensed under the **Simplified BSD License**. See `README.html` for full copyright details.
 
 ---
-*Developed by Bruh (Spring 2026) for ECE319K at UT Austin.*
+*Developed by Mauro Brito (Spring 2026) for ECE319K at UT Austin.*
